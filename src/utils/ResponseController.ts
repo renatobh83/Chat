@@ -1,9 +1,9 @@
 class ResponseController{
-  defaultResponse = (message: object, statusCode: number) =>({
+  defaultResponse = (message: any, statusCode: number = 200) =>({
     message,
     statusCode
   })
-  errorResponse = (message: object, statusCode: number) =>({
+  errorResponse = (message: any, statusCode: number = 400) =>({
     message,
     statusCode
   })
