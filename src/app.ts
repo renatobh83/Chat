@@ -11,10 +11,11 @@ const http = createServer(app);
 const io = new Server(http, {
   cors: {
     origin: "*",
+    methods:["GET", "POST"]
   },
 });
 app.use(routes)
-
+io.on("connection",(socket: Socket)=> console.log(`Socket ${socket.id} se conectou`))
 
 export {
   http,
