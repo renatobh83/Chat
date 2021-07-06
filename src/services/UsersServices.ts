@@ -8,7 +8,7 @@ class UsersServices{
     this.usersRepository = getCustomRepository(UsersRepository)
   }
   async create(email: string) {
-    const userExists = await this.usersRepository.findOne({email})
+    const userExists = await this.usersRepository.findOne({email: email.toLocaleLowerCase()})
 
     if(userExists) {
       return userExists
@@ -21,7 +21,8 @@ class UsersServices{
   }
 
   async findByEmail(email:string){
-    const user = await this.usersRepository.findOne({email})
+    const userEmail = email.toLocaleLowerCase()
+    const user = await this.usersRepository.findOne({email: userEmail})
      return user
   }
 

@@ -8,6 +8,7 @@ interface IMessageCreate{
   text: string
 }
 class MessagesServices{
+  
   private messageRepository: Repository<Messages>
   constructor(){
     this.messageRepository =  getCustomRepository(MessageRepository)

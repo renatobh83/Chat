@@ -15,7 +15,7 @@ const io = new Server(http, {
   },
 });
 app.use(routes)
-io.on("connection",(socket: Socket)=> console.log(`Socket ${socket.id} se conectou`))
+io.on("connection",(socket: Socket)=>{})
 
 export {
   http,
